@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* พื้นหลังมืดด้านหลัง Popup */
+        .event-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 9999;
+        }
+        /* กล่องข้อความ */
+        .event-modal {
+            background: #1a1a1a;
+            border: 2px solid #00ff00; /* สีเขียวสไตล์ NRO */
+            border-radius: 15px;
+            width: 90%; max-width: 500px;
+            padding: 25px;
+            color: #fff;
+            font-family: 'Tahoma', sans-serif;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+        }
+        .event-header { 
+            color: #00ff00; 
+            font-size: 26px; 
+            font-weight: bold; 
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 5px #000;
+        }
+        .event-content { 
+            font-size: 16px; 
+            line-height: 1.6; 
+            margin-bottom: 20px; 
+            text-align: left; 
+            background: #252525;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .event-content b { color: #ffff00; } /* ไฮไลท์ตัวหนาเป็นสีเหลือง */
+        .btn-close {
+            background: linear-gradient(to bottom, #00ff00, #008800);
+            border: none; padding: 10px 40px;
+            color: #000; font-weight: bold; cursor: pointer; 
+            border-radius: 5px; font-size: 16px;
+        }
+        .btn-close:hover { background: #00ff00; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<div class="event-overlay" id="eventModal">
+    <div class="event-modal">
+        <div class="event-header">📢 แจ้งอัปเดต NRO NewWorld</div>
+        <div class="event-content">
+            <p>สวัสดีชาวไซย่าทุกท่าน! เซิร์ฟเวอร์มีการอัปเดตดังนี้:</p>
+            <ul>
+                <li>🔥 เปิดกิจกรรม <b>ศึกชิงเจ้ายุทธภพ</b> ครั้งที่ 1</li>
+                <li>🛠 ปรับปรุงระบบ <b>ฟิวชั่น (รวมร่าง)</b> ให้เสถียรขึ้น</li>
+                <li>🎁 แจกโค้ดฟรี: <code>NEWWORLD2026</code></li>
+            </ul>
+            <p style="text-align:center;"><i>เริ่มอัปเดต: 23:00 น. คืนนี้</i></p>
+        </div>
+        <button class="btn-close" onclick="closeModal()">รับทราบ</button>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        document.getElementById('eventModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
